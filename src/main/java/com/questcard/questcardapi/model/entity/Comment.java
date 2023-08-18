@@ -1,8 +1,10 @@
 package com.questcard.questcardapi.model.entity;
 
+import lombok.Getter;
 import javax.persistence.*;
 import java.util.Date;
 
+@Getter
 @Entity
 public class Comment {
     @Id
@@ -37,9 +39,6 @@ public class Comment {
         this.quiz = quiz;
     }
 
-    public Long getCommentId() {
-        return commentId;
-    }
 
     public void setCommentId(Long commentId) {
         this.commentId = commentId;
@@ -53,32 +52,16 @@ public class Comment {
         this.appUser = appUser;
     }
 
-    public String getText() {
-        return text;
-    }
-
     public void setText(String text) {
         this.text = text;
-    }
-
-    public Date getDatePosted() {
-        return datePosted;
     }
 
     public void setDatePosted(Date datePosted) {
         this.datePosted = datePosted;
     }
 
-    public int getReputation() {
-        return reputation;
-    }
-
     public void setReputation(int reputation) {
         this.reputation = reputation;
-    }
-
-    public Quiz getQuiz(){
-        return quiz;
     }
 
     public void setQuiz(Quiz quiz) {

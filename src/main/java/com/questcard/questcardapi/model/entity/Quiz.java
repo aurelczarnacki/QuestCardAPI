@@ -1,8 +1,11 @@
 package com.questcard.questcardapi.model.entity;
+
+import lombok.Getter;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Getter
 @Entity
 public class Quiz {
     @Id
@@ -70,89 +73,44 @@ public class Quiz {
         this.category = category;
         this.tags = tags;
     }
-
-    public Long getQuizId() {
-        return quizId;
-    }
-
     public void setQuizId(Long quizId) {
         this.quizId = quizId;
-    }
-
-    public AppUser getOwner() {
-        return owner;
     }
 
     public void setOwner(AppUser owner) {
         this.owner = owner;
     }
 
-    public List<AppUser> getManagers() {
-        return managers;
-    }
-
     public void setManagers(List<AppUser> managers) {
         this.managers = managers;
-    }
-
-    public Type getType() {
-        return type;
     }
 
     public void setType(Type type) {
         this.type = type;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getDateOfCreation() {
-        return dateOfCreation;
     }
 
     public void setDateOfCreation(Date dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
-
     public void setComments(List<Comment> comments) {
         this.comments = comments;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public int getReputation() {
-        return reputation;
-    }
-
     public void setReputation(int reputation) {
         this.reputation = reputation;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
-    }
-
-    public int getGamesPlayed() {
-        return gamesPlayed;
     }
 
     public void setGamesPlayed(int gamesPlayed) {
