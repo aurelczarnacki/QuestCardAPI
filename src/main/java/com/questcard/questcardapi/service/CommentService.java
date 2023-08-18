@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.service;
 
-import com.questcard.questcardapi.model.Comment;
+import com.questcard.questcardapi.model.entity.Comment;
 import com.questcard.questcardapi.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

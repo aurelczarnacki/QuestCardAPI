@@ -1,4 +1,4 @@
-package com.questcard.questcardapi;
+package com.questcard.questcardapi.security;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,13 +11,11 @@ public class CustomPasswordEncoder implements PasswordEncoder {
 
     @Override
     public String encode(CharSequence rawPassword) {
-        // Hash the password using BCryptPasswordEncoder
         return bCryptPasswordEncoder.encode(rawPassword);
     }
 
     @Override
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
-        // Compare passwords using BCryptPasswordEncoder
         return bCryptPasswordEncoder.matches(rawPassword, encodedPassword);
     }
 }

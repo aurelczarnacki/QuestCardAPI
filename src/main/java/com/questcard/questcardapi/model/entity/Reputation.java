@@ -1,4 +1,4 @@
-package com.questcard.questcardapi.model;
+package com.questcard.questcardapi.model.entity;
 
 import javax.persistence.*;
 

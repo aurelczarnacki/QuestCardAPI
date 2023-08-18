@@ -1,7 +1,10 @@
-package com.questcard.questcardapi.model;
+package com.questcard.questcardapi.model.entity;
+
+import lombok.Getter;
 
 import javax.persistence.*;
 
+@Getter
 @Entity
 public class QuestionCard {
     @Id
@@ -26,40 +29,20 @@ public class QuestionCard {
         this.pickCount = pickCount;
     }
 
-    public Long getQuestionCardId() {
-        return questionCardId;
-    }
-
     public void setQuestionCardId(Long questionCardId) {
         this.questionCardId = questionCardId;
-    }
-
-    public Quiz getQuiz() {
-        return quiz;
     }
 
     public void setQuiz(Quiz quiz) {
         this.quiz = quiz;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
-    }
-
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
     }
 
-    public String getText() {
-        return text;
-    }
-
     public void setText(String text) {
         this.text = text;
-    }
-
-    public int getPickCount() {
-        return pickCount;
     }
 
     public void setPickCount(int pickCount) {

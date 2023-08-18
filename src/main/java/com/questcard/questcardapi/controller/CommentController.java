@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.controller;
 
-import com.questcard.questcardapi.model.Comment;
+import com.questcard.questcardapi.model.entity.Comment;
 import com.questcard.questcardapi.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

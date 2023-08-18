@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.controller;
 
-import com.questcard.questcardapi.model.Quiz;
+import com.questcard.questcardapi.model.entity.Quiz;
 import com.questcard.questcardapi.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

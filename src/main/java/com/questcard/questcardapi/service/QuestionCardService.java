@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.service;
 
-import com.questcard.questcardapi.model.QuestionCard;
+import com.questcard.questcardapi.model.entity.QuestionCard;
 import com.questcard.questcardapi.repository.QuestionCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

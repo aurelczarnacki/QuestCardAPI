@@ -1,6 +1,5 @@
-package com.questcard.questcardapi.model;
+package com.questcard.questcardapi.model.entity;
 
-import com.questcard.questcardapi.model.AppUser;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -26,8 +25,6 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "quiz_id")
     private Quiz quiz;
-
-    // ... konstruktory, gettery, settery ...
 
     public Comment() {
     }

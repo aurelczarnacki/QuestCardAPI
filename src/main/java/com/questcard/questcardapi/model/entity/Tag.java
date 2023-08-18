@@ -1,8 +1,11 @@
-package com.questcard.questcardapi.model;
+package com.questcard.questcardapi.model.entity;
+
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Getter
 @Entity
 public class Tag {
     @Id
@@ -22,24 +25,12 @@ public class Tag {
         this.name = name;
     }
 
-    public Long getTagId() {
-        return tagId;
-    }
-
     public void setTagId(Long tagId) {
         this.tagId = tagId;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Quiz> getQuizzes() {
-        return quizzes;
     }
 
     public void setQuizzes(List<Quiz> quizzes) {

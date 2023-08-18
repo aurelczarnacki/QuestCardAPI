@@ -1,7 +1,7 @@
 package com.questcard.questcardapi.service;
 
-import com.questcard.questcardapi.model.AppUser;
-import com.questcard.questcardapi.model.Reputation;
+import com.questcard.questcardapi.model.entity.AppUser;
+import com.questcard.questcardapi.model.entity.Reputation;
 import com.questcard.questcardapi.repository.ReputationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

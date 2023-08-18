@@ -1,9 +1,10 @@
 package com.questcard.questcardapi.controller;
 
-import com.questcard.questcardapi.model.AppUser;
+import com.questcard.questcardapi.model.entity.Role;
+import com.questcard.questcardapi.security.CustomPasswordEncoder;
+import com.questcard.questcardapi.model.entity.AppUser;
 import com.questcard.questcardapi.model.AuthRequest;
 import com.questcard.questcardapi.model.AuthResponse;
-import com.questcard.questcardapi.model.Role;
 import com.questcard.questcardapi.security.jwt.JwtTokenProvider;
 import com.questcard.questcardapi.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,12 +25,14 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
     private final AppUserService appUserService;
+    private final CustomPasswordEncoder passwordEncoder;
 
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, AppUserService appUserService) {
+    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, AppUserService appUserService, CustomPasswordEncoder passwordEncoder) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
         this.appUserService = appUserService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @PostMapping("/login")
@@ -67,14 +66,13 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Email already taken");
         }
 
-        // Hash the password using PasswordEncoder
-        String hashedPassword = new BCryptPasswordEncoder().encode(data.getHashedPassword());
+        String hashedPassword = passwordEncoder.encode(data.getHashedPassword());
         data.setHashedPassword(hashedPassword);
-
-        // Set registration date to current date
         data.setDateOfRegister(new Date());
 
-        // Create a new user
+        Role userRole = appUserService.findRoleByRoleName("user");
+        data.setRole(userRole);
+
         appUserService.save(data);
 
         return ResponseEntity.ok("User registered successfully");

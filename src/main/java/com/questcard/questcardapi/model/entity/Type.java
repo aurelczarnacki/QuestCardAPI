@@ -1,7 +1,10 @@
-package com.questcard.questcardapi.model;
+package com.questcard.questcardapi.model.entity;
+
+import lombok.Getter;
 
 import javax.persistence.*;
 
+@Getter
 @Entity
 public class Type {
     @Id
@@ -18,16 +21,8 @@ public class Type {
         this.name = name;
     }
 
-    public Long getTypeId() {
-        return typeId;
-    }
-
     public void setTypeId(Long typeId) {
         this.typeId = typeId;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {

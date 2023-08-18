@@ -1,7 +1,7 @@
 package com.questcard.questcardapi.repository;
 
-import com.questcard.questcardapi.model.AppUser;
-import com.questcard.questcardapi.model.Quiz;
+import com.questcard.questcardapi.model.entity.AppUser;
+import com.questcard.questcardapi.model.entity.Quiz;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

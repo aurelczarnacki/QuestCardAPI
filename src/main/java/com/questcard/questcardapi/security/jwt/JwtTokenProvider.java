@@ -22,7 +22,6 @@ public class JwtTokenProvider {
     @Value("${jwt.expiration}")
     private int jwtExpiration;
 
-    // W miejscu, gdzie tworzysz instancję JwtTokenProvider
     private final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);

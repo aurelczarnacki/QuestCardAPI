@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.controller;
 
-import com.questcard.questcardapi.model.Category;
+import com.questcard.questcardapi.model.entity.Category;
 import com.questcard.questcardapi.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

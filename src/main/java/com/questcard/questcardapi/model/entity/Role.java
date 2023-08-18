@@ -1,8 +1,11 @@
-package com.questcard.questcardapi.model;
+package com.questcard.questcardapi.model.entity;
+
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Getter
 @Entity
 public class Role {
     @Id
@@ -24,24 +27,12 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public Long getRoleId() {
-        return roleId;
-    }
-
     public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 
-    public String getRoleName() {
-        return roleName;
-    }
-
     public void setRoleName(String roleName) {
         this.roleName = roleName;
-    }
-
-    public List<AppUser> getUsers() {
-        return users;
     }
 
     public void setUsers(List<AppUser> users) {

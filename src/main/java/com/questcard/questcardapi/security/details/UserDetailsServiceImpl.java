@@ -1,6 +1,6 @@
-package com.questcard.questcardapi.security;
+package com.questcard.questcardapi.security.details;
 
-import com.questcard.questcardapi.model.AppUser;
+import com.questcard.questcardapi.model.entity.AppUser;
 import com.questcard.questcardapi.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,6 +24,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (appUser == null) {
             throw new UsernameNotFoundException("User not found with email: " + email);
         }
-        return new AuthUserDetails(appUser); // Tworzenie instancji AuthUserDetails na podstawie AppUser
+        return new AuthUserDetails(appUser);
     }
 }

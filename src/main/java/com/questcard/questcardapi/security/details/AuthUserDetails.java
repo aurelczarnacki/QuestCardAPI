@@ -1,26 +1,29 @@
-package com.questcard.questcardapi.security;
+package com.questcard.questcardapi.security.details;
 
-import com.questcard.questcardapi.model.AppUser;
+import com.questcard.questcardapi.model.entity.AppUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 public class AuthUserDetails implements UserDetails {
 
     private final AppUser appUser;
 
     public AuthUserDetails(AppUser appUser) {
+        super();
         this.appUser = appUser;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<SimpleGrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
-        return authorities;
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
+    public String getEmail() {
+        return appUser.getEmail();
     }
 
     @Override

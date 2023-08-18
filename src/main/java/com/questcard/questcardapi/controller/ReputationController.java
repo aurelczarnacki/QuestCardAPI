@@ -1,6 +1,5 @@
 package com.questcard.questcardapi.controller;
 
-import com.questcard.questcardapi.model.Reputation;
 import com.questcard.questcardapi.service.ReputationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

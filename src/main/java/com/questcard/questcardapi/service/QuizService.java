@@ -1,7 +1,7 @@
 package com.questcard.questcardapi.service;
 
-import com.questcard.questcardapi.model.AppUser;
-import com.questcard.questcardapi.model.Quiz;
+import com.questcard.questcardapi.model.entity.AppUser;
+import com.questcard.questcardapi.model.entity.Quiz;
 import com.questcard.questcardapi.repository.AppUserRepository;
 import com.questcard.questcardapi.repository.QuizRepository;
 import org.springframework.beans.factory.annotation.Autowired;

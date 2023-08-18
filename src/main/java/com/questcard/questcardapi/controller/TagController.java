@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.controller;
 
-import com.questcard.questcardapi.model.Tag;
+import com.questcard.questcardapi.model.entity.Tag;
 import com.questcard.questcardapi.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

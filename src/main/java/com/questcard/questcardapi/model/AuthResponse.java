@@ -1,5 +1,8 @@
 package com.questcard.questcardapi.model;
 
+import lombok.Getter;
+
+@Getter
 public class AuthResponse {
     private String token;
 
@@ -8,10 +11,6 @@ public class AuthResponse {
 
     public AuthResponse(String token) {
         this.token = token;
-    }
-
-    public String getToken() {
-        return token;
     }
 
     public void setToken(String token) {

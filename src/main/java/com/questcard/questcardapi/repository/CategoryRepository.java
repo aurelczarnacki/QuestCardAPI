@@ -1,6 +1,6 @@
 package com.questcard.questcardapi.repository;
 
-import com.questcard.questcardapi.model.Category;
+import com.questcard.questcardapi.model.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
