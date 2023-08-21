@@ -21,7 +21,7 @@ The backend API is built using the following technologies and tools:
 - Spring Boot 2.x
 - Spring Security
 - Hibernate ORM
-- MySQL
+- MSSQL
 - JWT (JSON Web Tokens)
 
 ## Getting Started
